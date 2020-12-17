@@ -125,7 +125,7 @@ export default {
           return true
         }
         // display LB and PF options for isolated networks if static nat is disabled
-        if (this.resource && !this.resource.vpcid) {
+        if (this.resource && (!this.resource.vpcid || tab.name === 'portforwarding')) {
           if (!this.resource.isstaticnat) {
             return true
           } else if (tab.name === 'firewall') {
